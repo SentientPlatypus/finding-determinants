@@ -1,6 +1,6 @@
 import twobytwo
-
+import threebythree
 
 n = twobytwo.basicDet()
-
-n.construct()
+l = threebythree.detofthree()
+l.construct()
