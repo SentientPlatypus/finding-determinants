@@ -6,4 +6,6 @@ file 'file:W:/Code/Animations/finding-determinants/media/videos/threebythree/108
 file 'file:W:/Code/Animations/finding-determinants/media/videos/threebythree/1080p60/partial_movie_files/showtriangle/1672018281_906650444_1276867961.mp4'
 file 'file:W:/Code/Animations/finding-determinants/media/videos/threebythree/1080p60/partial_movie_files/showtriangle/1672018281_808475705_1936564995.mp4'
 file 'file:W:/Code/Animations/finding-determinants/media/videos/threebythree/1080p60/partial_movie_files/showtriangle/1672018281_2536690878_2189046510.mp4'
-file 'file:W:/Code/Animations/finding-determinants/media/videos/threebythree/1080p60/partial_movie_files/showtriangle/1672018281_329969645_3102034515.mp4'
+file 'file:W:/Code/Animations/finding-determinants/media/videos/threebythree/1080p60/partial_movie_files/showtriangle/1672018281_1427503207_967227157.mp4'
+file 'file:W:/Code/Animations/finding-determinants/media/videos/threebythree/1080p60/partial_movie_files/showtriangle/1672018281_1082048055_1883278619.mp4'
+file 'file:W:/Code/Animations/finding-determinants/media/videos/threebythree/1080p60/partial_movie_files/showtriangle/1672018281_329969645_1501020585.mp4'

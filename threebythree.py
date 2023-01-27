@@ -61,6 +61,31 @@ class detofthree(MovingCameraScene):
             [[2, 3, 5, 6]]
         ]
 
+        one = MathTex("(-1)^", "{2}", "(-1)", font_size = 40).move_to([-6, -2, 0])
+        one[2].set_color(BLUE)
+        two = MathTex("+(-1)^", "{3}", "(2)", font_size = 40).move_to([-1, -2, 0])
+        two[2].set_color(BLUE)
+
+        three = MathTex("+(-1)^", "{2}", "(5)", font_size = 40).move_to([3.5, -2, 0])
+        three[2].set_color(BLUE)
+
+
+
+        mtxs = [
+            VGroup(
+                one, 
+                Matrix([[9, 1], [-6, 1]], left_bracket="|", right_bracket="|").next_to(one)
+            ),
+            VGroup(
+                two, 
+                Matrix([[3, 1], [-6, 1]], left_bracket="|", right_bracket="|").next_to(two)
+            ),
+            VGroup(
+                three, 
+                Matrix([[3, 1], [9, 1]], left_bracket="|", right_bracket="|").next_to(three)
+            ),
+        ]
+
         ent = mtx.get_entries()
         rowcounter = 0
         for x in as_we_go_through:
@@ -71,9 +96,41 @@ class detofthree(MovingCameraScene):
                 sl = SurroundingRectangle(t).set_color(PURPLE)
                 s.append(sl)
                 self.play(Create(sl))
+            self.play(Write(mtxs[rowcounter]))
+            if rowcounter == 0:
+                b = Brace(one[1], direction = UP)
+                desc = Tex("i + j").move_to(b.get_top() + [0, 1, 0])
+                self.play(Create(b))
+                self.play(Write(desc))
+                self.wait(.5)
+                self.play(FadeOut(b, desc))
+
             self.play(FadeOut(*s))
             rowcounter += 1
-            
+        
+        abcd = [
+            [9, 1, -6, 1],
+            [3, 1, -6, 1],
+            [3, 1, 9, 1]
+        ]
+
+        ott = [
+            one, 
+            two,
+            three
+        ]
+
+        for (text, mtx), (a, b, c, d), t in zip(mtxs, abcd, ott):
+            mtx:Matrix
+            ele = mtx.get_entries()
+            f = MathTex("(ad-bc)", color = YELLOW).move_to(mtx)
+            self.play(Transform(mtx, f))
+            f = MathTex(f"{a*d - b*c}", font_size = 40).next_to(t)
+            self.play(Transform(mtx, f))
+
+        self.play(FadeOut(*mtxs))
+        solution = MathTex("=-63", color = YELLOW).move_to([0, -2, 0])
+        self.play(Write(solution))
 
 
         self.wait()
@@ -135,5 +192,10 @@ class showtriangle(Scene):
             Write(Atop),
             Write(mtx)
         )
+
+        solution = MathTex("(-63)").next_to(Atop)
+        self.play(Transform(mtx, solution))
+        finals = MathTex("= -31.5").next_to(solution)
+        self.play(Write(finals))
 
         self.wait()
