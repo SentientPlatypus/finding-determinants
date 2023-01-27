@@ -205,7 +205,7 @@ class basicDet(MovingCameraScene):
 
         self.play(FadeOut(afterscalar, six_10_9_13))
         self.play(solution.animate.move_to(abcd.get_right() + [2,0,0]))
-
+        self.play(problem.animate.move_to(ORIGIN))
 
         self.wait()
         

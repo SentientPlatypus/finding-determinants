@@ -98,7 +98,8 @@ class dettricks(MovingCameraScene):
             0, 18
         ]])).set_color(PURPLE)
         eq = MathTex("det = ", "a").move_to([2, 2, 0])
-        self.play(rowrect.animate.set_fill(GREEN, opacity = .7), Create(p), Create(colrect), Write(eq))
+        self.play(rowrect.animate.set_fill(GREEN, opacity = .7), Create(colrect))
+        self.play(Create(p), Write(eq))
 
         self.play(
             Transform(rowrect, SurroundingRectangle(VGroup(*[ent[x] for x in [15, 16, 17,18]]), color = GREEN).set_fill(GREEN, opacity = .7)),
@@ -120,7 +121,7 @@ class dettricks(MovingCameraScene):
         self.play(Transform(eq, MathTex("det = ", "a", "*a", "*a", "*(a*d", "-", "b*c)").next_to(eq.get_left())))
 
         self.play(Create(ad), Transform(eq[4], MathTex("*(a*a").move_to(eq[4])))
-        self.play(Create(cb), Transform(eq[6], MathTex("a*0").move_to(eq[6])))
+        self.play(Create(cb), Transform(eq[6], MathTex("a*0)").move_to(eq[6])))
         self.play(Transform(eq[1:], MathTex("a^5").set_color(YELLOW).move_to(eq[1])))
 
         self.wait()
