@@ -133,7 +133,7 @@ class basicDet(MovingCameraScene):
 
 
         
-        self.play(six_10_9_13.animate.move_to(RIGHT * 4))
+        self.play(six_10_9_13.animate.move_to(RIGHT * 3.8))
 
         oneoverdet = MathTex(r"\frac {1} {-2}").move_to(mtx.get_right() + [2, 0, 0])
         inversemtxex = MobjectMatrix([[MathTex("2"), MathTex("4")], [MathTex("3"), MathTex("5")]]).move_to(mtx.get_right() + [4, 0, 0])
@@ -157,18 +157,18 @@ class basicDet(MovingCameraScene):
 
         self.play(Write(afterscalar))
 
-        for n in range(4):
+        for n, zet in zip([3, 1, 2, 0], [0,1,2,3,]):
             copy = oneoverdet.copy().set_color(RED)
             copyofn = elements[n].copy().set_color(RED)     
-            totransform = VGroup(copy, copyofn, afterscalarentries[n])
-            s = resultsofscalar[n]
+            totransform = VGroup(copy, copyofn, afterscalarentries[zet])
+            s = resultsofscalar[zet]
             self.play(
-                copy.animate.move_to(afterscalarentries[n]),
-                copyofn.animate.move_to(afterscalarentries[n]),
-                Transform(totransform, MathTex(f"{s}").move_to(afterscalarentries[n])),
+                copy.animate.move_to(afterscalarentries[zet]),
+                copyofn.animate.move_to(afterscalarentries[zet]),
+                Transform(totransform, MathTex(f"{s}").move_to(afterscalarentries[zet])),
                 run_time = 1
             )
-            afterscalarentries[n] = totransform
+            afterscalarentries[zet] = totransform
 
         
 

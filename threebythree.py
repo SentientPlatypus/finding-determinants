@@ -66,7 +66,7 @@ class detofthree(MovingCameraScene):
         two = MathTex("+(-1)^", "{3}", "(2)", font_size = 40).move_to([-1, -2, 0])
         two[2].set_color(BLUE)
 
-        three = MathTex("+(-1)^", "{2}", "(5)", font_size = 40).move_to([3.5, -2, 0])
+        three = MathTex("+(-1)^", "{4}", "(5)", font_size = 40).move_to([3.5, -2, 0])
         three[2].set_color(BLUE)
 
 
